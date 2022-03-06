@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 
+bool topLevel = true;
+
 void main() {
+  var insideMain = true;
+  myFunction() {
+    var insideFunction = true;
+
+    nestedFunction() {
+      var insideNestedFunction = true;
+      assert(topLevel);
+      assert(insideMain);
+      assert(insideFunction);
+      assert(insideNestedFunction);
+    }
+  }
+
   runApp(const MyApp());
 }
 
-anything () {
-  Widget build
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
