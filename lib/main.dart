@@ -23,6 +23,10 @@ void someFunction() {
 
 }
 
+int addingNumbers(int a, int b) {
+  return a + b;
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
