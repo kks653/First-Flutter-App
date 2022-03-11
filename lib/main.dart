@@ -20,7 +20,7 @@ void main() {
 }
 
 void someFunction() {
-
+  var aValue = 55;
 }
 
 int addingNumbers(int a, int b) {
