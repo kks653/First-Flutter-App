@@ -1,92 +1,55 @@
 import 'package:flutter/material.dart';
 
-bool topLevel = true;
-
-void main() {
-  var insideMain = true;
-  myFunction() {
-    var insideFunction = true;
-
-    nestedFunction() {
-      var insideNestedFunction = true;
-      assert(topLevel);
-      assert(insideMain);
-      assert(insideFunction);
-      assert(insideNestedFunction);
-    }
-  }
-
-  runApp(const MyApp());
-}
-
-void someFunction() {
-  var aValue = 55;
-}
-
-int addingNumbers(int a, int b) {
-  return a + b;
-}
-
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: "BBANTO",
+      home: Grade(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class Grade extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
+      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-       title: Text(widget.title),
+        title: Text("BBANTO"),
+        backgroundColor: Colors.amber[700],
+        centerTitle: true,
+        elevation: 0.0,
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text("NAME",
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            SizedBox(
+              height: 10.0,
             ),
+            Text("BBANTO",
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold
+              ),
+            )
+
           ],
-        ),
+        )
+        ,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
